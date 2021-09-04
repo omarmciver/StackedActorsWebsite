@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "homepage": "http://omarmciver.github.io/StackedActorsWebsite/",
+  "homepage": "http://stackedactors.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
