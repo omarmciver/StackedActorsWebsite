@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "homepage": "http://stackedactors.com/",
+  "homepage": "https://www.stackedactors.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
