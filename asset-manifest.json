@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/stackedactorswebsite/static/css/main.5739ad41.chunk.css",
-    "main.js": "/stackedactorswebsite/static/js/main.0a8f76b0.chunk.js",
-    "main.js.map": "/stackedactorswebsite/static/js/main.0a8f76b0.chunk.js.map",
-    "runtime-main.js": "/stackedactorswebsite/static/js/runtime-main.bfbe0c31.js",
-    "runtime-main.js.map": "/stackedactorswebsite/static/js/runtime-main.bfbe0c31.js.map",
-    "static/js/2.70a069e3.chunk.js": "/stackedactorswebsite/static/js/2.70a069e3.chunk.js",
-    "static/js/2.70a069e3.chunk.js.map": "/stackedactorswebsite/static/js/2.70a069e3.chunk.js.map",
-    "static/js/3.aa632d50.chunk.js": "/stackedactorswebsite/static/js/3.aa632d50.chunk.js",
-    "static/js/3.aa632d50.chunk.js.map": "/stackedactorswebsite/static/js/3.aa632d50.chunk.js.map",
-    "index.html": "/stackedactorswebsite/index.html",
-    "static/css/main.5739ad41.chunk.css.map": "/stackedactorswebsite/static/css/main.5739ad41.chunk.css.map",
-    "static/js/2.70a069e3.chunk.js.LICENSE.txt": "/stackedactorswebsite/static/js/2.70a069e3.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/stackedactorswebsite/static/media/logo.6ce24c58.svg"
+    "main.css": "/StackedActorsWebsite/static/css/main.5739ad41.chunk.css",
+    "main.js": "/StackedActorsWebsite/static/js/main.0a8f76b0.chunk.js",
+    "main.js.map": "/StackedActorsWebsite/static/js/main.0a8f76b0.chunk.js.map",
+    "runtime-main.js": "/StackedActorsWebsite/static/js/runtime-main.ba26ef3f.js",
+    "runtime-main.js.map": "/StackedActorsWebsite/static/js/runtime-main.ba26ef3f.js.map",
+    "static/js/2.70a069e3.chunk.js": "/StackedActorsWebsite/static/js/2.70a069e3.chunk.js",
+    "static/js/2.70a069e3.chunk.js.map": "/StackedActorsWebsite/static/js/2.70a069e3.chunk.js.map",
+    "static/js/3.aa632d50.chunk.js": "/StackedActorsWebsite/static/js/3.aa632d50.chunk.js",
+    "static/js/3.aa632d50.chunk.js.map": "/StackedActorsWebsite/static/js/3.aa632d50.chunk.js.map",
+    "index.html": "/StackedActorsWebsite/index.html",
+    "static/css/main.5739ad41.chunk.css.map": "/StackedActorsWebsite/static/css/main.5739ad41.chunk.css.map",
+    "static/js/2.70a069e3.chunk.js.LICENSE.txt": "/StackedActorsWebsite/static/js/2.70a069e3.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/StackedActorsWebsite/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.bfbe0c31.js",
+    "static/js/runtime-main.ba26ef3f.js",
     "static/js/2.70a069e3.chunk.js",
     "static/css/main.5739ad41.chunk.css",
     "static/js/main.0a8f76b0.chunk.js"
