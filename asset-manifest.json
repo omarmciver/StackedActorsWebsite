@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.639dcb79.chunk.css",
-    "main.js": "/static/js/main.f5bca6e6.chunk.js",
-    "main.js.map": "/static/js/main.f5bca6e6.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.50ad17d6.js",
-    "runtime-main.js.map": "/static/js/runtime-main.50ad17d6.js.map",
-    "static/js/2.70a069e3.chunk.js": "/static/js/2.70a069e3.chunk.js",
-    "static/js/2.70a069e3.chunk.js.map": "/static/js/2.70a069e3.chunk.js.map",
-    "static/js/3.aa632d50.chunk.js": "/static/js/3.aa632d50.chunk.js",
-    "static/js/3.aa632d50.chunk.js.map": "/static/js/3.aa632d50.chunk.js.map",
+    "main.css": "/static/css/main.ef07e9f3.chunk.css",
+    "main.js": "/static/js/main.cb84944f.chunk.js",
+    "main.js.map": "/static/js/main.cb84944f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ee3ed5c3.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ee3ed5c3.js.map",
+    "static/js/2.b94a5f00.chunk.js": "/static/js/2.b94a5f00.chunk.js",
+    "static/js/2.b94a5f00.chunk.js.map": "/static/js/2.b94a5f00.chunk.js.map",
+    "static/js/3.15f81d5b.chunk.js": "/static/js/3.15f81d5b.chunk.js",
+    "static/js/3.15f81d5b.chunk.js.map": "/static/js/3.15f81d5b.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.639dcb79.chunk.css.map": "/static/css/main.639dcb79.chunk.css.map",
-    "static/js/2.70a069e3.chunk.js.LICENSE.txt": "/static/js/2.70a069e3.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/static/media/logo.6ce24c58.svg"
+    "static/css/main.ef07e9f3.chunk.css.map": "/static/css/main.ef07e9f3.chunk.css.map",
+    "static/js/2.b94a5f00.chunk.js.LICENSE.txt": "/static/js/2.b94a5f00.chunk.js.LICENSE.txt",
+    "static/media/AccordionSection.css": "/static/media/details-1-background.94b882b0.jpg",
+    "static/media/TabsSection.css": "/static/media/details-2-background.5f310082.jpg",
+    "static/media/HeaderSection.css": "/static/media/header-background.b4819dd2.jpg",
+    "static/media/Navbar.css": "/static/media/hexagon-white.3c2a9cdd.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.50ad17d6.js",
-    "static/js/2.70a069e3.chunk.js",
-    "static/css/main.639dcb79.chunk.css",
-    "static/js/main.f5bca6e6.chunk.js"
+    "static/js/runtime-main.ee3ed5c3.js",
+    "static/js/2.b94a5f00.chunk.js",
+    "static/css/main.ef07e9f3.chunk.css",
+    "static/js/main.cb84944f.chunk.js"
   ]
 }
