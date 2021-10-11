@@ -1,0 +1,137 @@
+/*************************/
+/*     08. Details 1     */
+/*************************/
+.accordion .area-1 {
+  height: 27rem;
+  background: url("./details-1-background.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.accordion .accordion-container {
+  max-width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 6.375rem;
+  padding-bottom: 1.5rem;
+}
+
+.accordion h2 {
+  margin-bottom: 1.625rem;
+}
+
+.accordion .item {
+  margin-bottom: 2rem;
+}
+
+.accordion h4 {
+  margin-bottom: 0;
+}
+
+.accordion span[aria-expanded="true"] .circle-numbering,
+.accordion span[aria-expanded="false"] .circle-numbering {
+  display: inline-block;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-right: 0.875rem;
+  border: 0.125rem solid #14bf98;
+  border-radius: 50%;
+  background-color: #14bf98;
+  color: #fff;
+  font: 700 1rem/2.125rem "Montserrat", sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.accordion span[aria-expanded="false"] .circle-numbering {
+  border: 0.125rem solid #484a46;
+  background-color: transparent;
+  color: #484a46;
+}
+
+.accordion .item:hover span[aria-expanded="false"] .circle-numbering {
+  border: 0.125rem solid #14bf98;
+  color: #14bf98;
+}
+
+.accordion .accordion-title {
+  display: inline-block;
+  width: 70%;
+  margin-top: 0.125rem;
+  margin-bottom: 0.25rem;
+  color: #484a46;
+  font: 700 1.25rem/1.75rem "Montserrat", sans-serif;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.accordion .item:hover .accordion-title {
+  color: #14bf98;
+}
+
+.accordion span[aria-expanded="true"] .accordion-title {
+  color: #14bf98;
+}
+
+.accordion .accordion-body {
+  margin-left: 3.125rem;
+}
+
+/*****************************/
+/*     21. Media Queries     */
+/*****************************/
+/* Min-width width 768px */
+@media (min-width: 768px) {
+  /* Details 1 */
+  .accordion .accordion-container {
+    max-width: 70%;
+  }
+  /* end of details 1 */
+}
+/* end of min-width width 768px */
+
+/* Min-width width 992px */
+@media (min-width: 992px) {
+  /* Details 1 */
+  .accordion {
+    height: 34.625rem;
+  }
+
+  .accordion .area-1 {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+  }
+
+  .accordion .area-2 {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .accordion .accordion-container {
+    max-width: 88%;
+    margin-left: 2rem;
+    padding-bottom: 0;
+  }
+
+  .accordion .accordion-title {
+    width: 85%;
+  }
+  /* end of details 1 */
+}
+/* end of min-width width 992px */
+
+/* Min-width width 1200px */
+@media (min-width: 1200px) {
+  /* Details 1 */
+  .accordion .accordion-container {
+    max-width: 28rem;
+    margin-left: 5rem;
+  }
+  /* end of details 1 */
+}
+/* end of min-width width 1200px */

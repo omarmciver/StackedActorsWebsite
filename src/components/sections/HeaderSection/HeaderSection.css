@@ -1,0 +1,77 @@
+/*********************/
+/*    04. Header     */
+/*********************/
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+    url("./header-background.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.header .header-content {
+  padding-top: 8rem;
+  padding-bottom: 2.125rem;
+  text-align: center;
+}
+
+.header .text-container {
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.header .p-large {
+  margin-bottom: 2rem;
+  color: #dfe5ec;
+}
+
+.header .btn-solid-lg {
+  margin-right: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+/*****************************/
+/*     21. Media Queries     */
+/*****************************/
+/* Min-width width 768px */
+@media (min-width: 768px) {
+  /* Header */
+  .header .header-content {
+    padding-top: 13rem;
+    padding-bottom: 7.5rem;
+  }
+
+  .header h1 {
+    font: 700 3.5rem/4rem "Montserrat", sans-serif;
+  }
+  /* end of header */
+}
+/* end of min-width width 768px */
+
+/* Min-width width 992px */
+@media (min-width: 992px) {
+  /* Header */
+  .header .header-content {
+    padding-top: 14rem;
+    padding-bottom: 15rem;
+  }
+
+  .header .text-container {
+    margin-top: 6.5rem;
+  }
+  /* end of header */
+}
+/* end of min-width width 992px */
+
+/* Min-width width 1200px */
+@media (min-width: 1200px) {
+  /* Header */
+  .header .header-content {
+    padding-top: 14.75rem;
+    padding-bottom: 17.5rem;
+  }
+  /* end of header */
+}
+/* end of min-width width 1200px */

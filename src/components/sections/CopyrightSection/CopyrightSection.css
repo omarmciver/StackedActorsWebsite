@@ -1,0 +1,16 @@
+/*************************/
+/*     18. Copyright     */
+/*************************/
+.copyright {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  background-color: #113448;
+  text-align: center;
+}
+
+.copyright p,
+.copyright a {
+  color: #dfe5ec;
+  text-decoration: none;
+}
+
