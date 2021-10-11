@@ -29,7 +29,8 @@
 
 .tabs .nav-link:hover,
 .tabs .nav-link.active {
-  color: #14bf98;
+  color: #cf291d;
+  background-color: transparent !important;
 }
 
 .tabs .nav-link .fas {
@@ -59,7 +60,7 @@
   display: block;
   padding-left: 1.5rem;
   border-radius: 0.125rem;
-  background: linear-gradient(to bottom right, #14bf98, #1bd1a7);
+  background: linear-gradient(to bottom right, #cf291d, #ff0000);
 }
 
 .tabs #tab-1 .progress-bar.first {
@@ -85,7 +86,7 @@
 }
 
 .tabs #tab-2 .list-unstyled .media-bullet {
-  color: #14bf98;
+  color: #cf291d;
   font-weight: 600;
   font-size: 2rem;
   line-height: 2rem;
@@ -96,7 +97,7 @@
 }
 
 .tabs #tab-3 .list-unstyled .fas {
-  color: #14bf98;
+  color: #cf291d;
   font-size: 0.5rem;
   line-height: 1.375rem;
 }

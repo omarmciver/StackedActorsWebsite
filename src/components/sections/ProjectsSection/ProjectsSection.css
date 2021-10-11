@@ -38,12 +38,12 @@
 }
 
 .filter .button-group a:hover {
-  background-color: #14bf98;
+  background-color: #cf291d;
   color: #fff;
 }
 
 .filter .button-group a.button.is-checked {
-  background-color: #14bf98;
+  background-color: #cf291d;
   color: #fff;
 }
 
@@ -124,7 +124,7 @@
   margin-bottom: 0.625rem;
   margin-left: 0;
   border: none;
-  background-color: #14bf98;
+  background-color: #cf291d;
 }
 
 .lightbox-basic h6 {

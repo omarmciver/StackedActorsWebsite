@@ -12,21 +12,15 @@ function Navbar() {
             <div className="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <a className="nav-link page-scroll" href="#header">HOME <span className="sr-only">(current)</span></a>
+                        <a className="nav-link page-scroll" href="#header">Home <span className="sr-only">(current)</span></a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link page-scroll" href="#intro">INTRO</a>
+                        <a className="nav-link page-scroll" href="#music">Music</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link page-scroll" href="#services">SERVICES</a>
+                        <a className="nav-link page-scroll" href="#videos">Videos</a>
                     </li>
-                    <li className="nav-item">
-                        <a className="nav-link page-scroll" href="#callMe">CALL ME</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link page-scroll" href="#projects">PROJECTS</a>
-                    </li>
-                    <li className="nav-item dropdown">
+                    {/* <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button"
                             aria-haspopup="true" aria-expanded="false">ABOUT</a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -34,10 +28,7 @@ function Navbar() {
                             <div className="dropdown-items-divide-hr"></div>
                             <a className="dropdown-item" href="privacy-policy.html"><span className="item-text">PRIVACY POLICY</span></a>
                         </div>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link page-scroll" href="#contact">CONTACT</a>
-                    </li>
+                    </li> */}
                 </ul>
                 <span className="nav-item social-icons">
                     <span className="fa-stack">

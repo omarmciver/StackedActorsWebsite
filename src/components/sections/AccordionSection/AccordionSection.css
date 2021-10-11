@@ -33,9 +33,9 @@
   width: 2.25rem;
   height: 2.25rem;
   margin-right: 0.875rem;
-  border: 0.125rem solid #14bf98;
+  border: 0.125rem solid #cf291d;
   border-radius: 50%;
-  background-color: #14bf98;
+  background-color: #cf291d;
   color: #fff;
   font: 700 1rem/2.125rem "Montserrat", sans-serif;
   text-align: center;
@@ -51,8 +51,8 @@
 }
 
 .accordion .item:hover span[aria-expanded="false"] .circle-numbering {
-  border: 0.125rem solid #14bf98;
-  color: #14bf98;
+  border: 0.125rem solid #cf291d;
+  color: #cf291d;
 }
 
 .accordion .accordion-title {
@@ -68,11 +68,11 @@
 }
 
 .accordion .item:hover .accordion-title {
-  color: #14bf98;
+  color: #cf291d;
 }
 
 .accordion span[aria-expanded="true"] .accordion-title {
-  color: #14bf98;
+  color: #cf291d;
 }
 
 .accordion .accordion-body {

@@ -36,7 +36,7 @@ Colors:
 - Backgrounds - light gray #fbfbfb
 - Background - dark blue #153e52
 - Backgrounds navbar, footer - dark gray #113448
-- Buttons, bullets, icons - green #14bf98
+- Buttons, bullets, icons - green #BFBFBF
 - Headings text - black #484a46
 - Body text - gray #787976
 - Body text - light gray #dfe5ec
@@ -49,6 +49,8 @@ body,
 html {
   width: 100%;
   height: 100%;
+  background-color: #131313;
+
 }
 
 body,
@@ -79,32 +81,32 @@ p {
 }
 
 h1 {
-  color: #484a46;
+  color: #BFBFBF;
   font: 700 2.5rem/3rem "Montserrat", sans-serif;
 }
 
 h2 {
-  color: #484a46;
+  color: #BFBFBF;
   font: 700 1.75rem/2.125rem "Montserrat", sans-serif;
 }
 
 h3 {
-  color: #484a46;
+  color: #BFBFBF;
   font: 700 1.375rem/1.75rem "Montserrat", sans-serif;
 }
 
 h4 {
-  color: #484a46;
+  color: #BFBFBF;
   font: 700 1.25rem/1.625rem "Montserrat", sans-serif;
 }
 
 h5 {
-  color: #484a46;
+  color: #BFBFBF;
   font: 700 1.125rem/1.5rem "Montserrat", sans-serif;
 }
 
 h6 {
-  color: #484a46;
+  color: #BFBFBF;
   font: 700 1rem/1.375rem "Montserrat", sans-serif;
 }
 
@@ -119,7 +121,7 @@ a:hover {
 }
 
 a.green {
-  color: #14bf98;
+  color: #BFBFBF;
 }
 
 a.white,
@@ -140,16 +142,16 @@ strong {
 }
 
 .section-title {
-  color: #14bf98;
+  color: #BFBFBF;
   font: 500 0.8125rem/1.125rem "Montserrat", sans-serif;
 }
 
 .btn-solid-reg {
   display: inline-block;
   padding: 1.1875rem 1.875rem 1.1875rem 1.875rem;
-  border: 0.125rem solid #14bf98;
+  border: 0.125rem solid #BFBFBF;
   border-radius: 0.25rem;
-  background-color: #14bf98;
+  background-color: #BFBFBF;
   color: #fff;
   font: 700 0.75rem/0 "Montserrat", sans-serif;
   text-decoration: none;
@@ -158,16 +160,16 @@ strong {
 
 .btn-solid-reg:hover {
   background-color: transparent;
-  color: #14bf98;
+  color: #BFBFBF;
   text-decoration: none;
 }
 
 .btn-solid-lg {
   display: inline-block;
   padding: 1.375rem 2.125rem 1.375rem 2.125rem;
-  border: 0.125rem solid #14bf98;
+  border: 0.125rem solid #BFBFBF;
   border-radius: 0.25rem;
-  background-color: #14bf98;
+  background-color: #BFBFBF;
   color: #fff;
   font: 700 0.75rem/0 "Montserrat", sans-serif;
   text-decoration: none;
@@ -176,7 +178,7 @@ strong {
 
 .btn-solid-lg:hover {
   background-color: transparent;
-  color: #14bf98;
+  color: #BFBFBF;
   text-decoration: none;
 }
 
@@ -380,9 +382,9 @@ input[type="checkbox"] {
   display: inline-block;
   width: 100%;
   height: 3.125rem;
-  border: 0.125rem solid #14bf98;
+  border: 0.125rem solid #BFBFBF;
   border-radius: 0.25rem;
-  background-color: #14bf98;
+  background-color: #BFBFBF;
   color: #fff;
   font: 700 0.75rem/1.75rem "Montserrat", sans-serif;
   cursor: pointer;
@@ -391,7 +393,7 @@ input[type="checkbox"] {
 
 .form-control-submit-button:hover {
   background-color: transparent;
-  color: #14bf98;
+  color: #BFBFBF;
 }
 
 /* Fade Animation For Image Slider - Magnific Popup */
@@ -457,13 +459,13 @@ a.back-to-top {
   width: 2.625rem;
   height: 2.625rem;
   border-radius: 1.875rem;
-  background: #14bf98 url("../images/up-arrow.png") no-repeat center 47%;
+  background: #BFBFBF url("../images/up-arrow.png") no-repeat center 47%;
   background-size: 1.125rem 1.125rem;
   text-indent: -9999px;
 }
 
 a:hover.back-to-top {
-  background-color: #13aa87;
+  background-color: #CF291D;
 }
 
 /*****************************/

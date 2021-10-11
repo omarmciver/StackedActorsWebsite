@@ -16,11 +16,11 @@ function App() {
       <Spinner />
       <Navbar />
       <HeaderSection />
-      <IntroSection />
-      <AccordionSection />
-      <TabsSection />
       <ProjectsSection />
-      <FooterSection />
+      {/* <IntroSection /> */}
+      {/* <AccordionSection /> */}
+      {/* <TabsSection /> */}
+      {/* <FooterSection /> */}
       <CopyrightSection />
     </div>
   );

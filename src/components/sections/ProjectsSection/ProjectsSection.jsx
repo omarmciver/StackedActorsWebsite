@@ -4,7 +4,7 @@ function ProjectsSection() {
 
     return (
         <div>
-            <div id="projects" className="filter">
+            <div id="music" className="filter">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
@@ -17,10 +17,11 @@ function ProjectsSection() {
 
                             <div className="button-group filters-button-group">
                                 <a className="button is-checked" data-filter="*"><span>SHOW ALL</span></a>
-                                <a className="button" data-filter=".design"><span>DESIGN</span></a>
-                                <a className="button" data-filter=".development"><span>DEVELOPMENT</span></a>
-                                <a className="button" data-filter=".marketing"><span>MARKETING</span></a>
-                                <a className="button" data-filter=".seo"><span>SEO</span></a>
+                                <a className="button" data-filter=".design"><span>Chapter 5</span></a>
+                                <a className="button" data-filter=".design"><span>Chapter 4</span></a>
+                                <a className="button" data-filter=".development"><span>Chapter 3</span></a>
+                                <a className="button" data-filter=".marketing"><span>Chapter 2</span></a>
+                                <a className="button" data-filter=".seo"><span>Chapter 1</span></a>
                             </div>
                             <div className="grid">
                                 <div className="element-item development">
