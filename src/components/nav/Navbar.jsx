@@ -3,7 +3,7 @@ import './Navbar.css'
 function Navbar() {
     return (
         <nav className="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
-            <a className="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative" /></a>
+            <a className="navbar-brand logo-image" href="index.html"><img src="images/logo.png" alt="alternative" /></a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
                 aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-awesome fas fa-bars"></span>
@@ -18,7 +18,7 @@ function Navbar() {
                         <a className="nav-link page-scroll" href="#music">Music</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link page-scroll" href="#videos">Videos</a>
+                        <a className="nav-link page-scroll" href="#images">Images</a>
                     </li>
                     {/* <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button"

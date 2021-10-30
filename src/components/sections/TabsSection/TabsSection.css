@@ -1,6 +1,19 @@
 /*************************/
 /*     09. Details 2     */
 /*************************/
+.tabs {
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
+}
+.tabs .section-title {
+  margin-bottom: 0.5rem;
+}
+
+.tabs h2,
+.tabs .section-title {
+  text-align: center;
+}
+
 .tabs .tabs-container {
   max-width: 90%;
   margin-right: auto;
@@ -10,7 +23,7 @@
 }
 
 .tabs .nav-tabs {
-  justify-content: center;
+  justify-content: left;
   margin-bottom: 1.125rem;
   border-bottom: none;
 }
@@ -110,12 +123,6 @@
   margin-bottom: 1.75rem;
 }
 
-.tabs .area-2 {
-  height: 27rem;
-  background: url("./details-2-background.jpg") center center no-repeat;
-  background-size: cover;
-}
-
 /*****************************/
 /*     21. Media Queries     */
 /*****************************/
@@ -128,7 +135,7 @@
 
   .tabs #tab-2 .list-unstyled {
     display: inline-block;
-    width: 45%;
+    /* width: 45%; */
     margin-top: 0;
   }
 
@@ -147,16 +154,10 @@
   }
 
   .tabs .area-1 {
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: inline-block;
     vertical-align: top;
-  }
-
-  .tabs .area-2 {
-    width: 50%;
-    height: 100%;
-    display: inline-block;
   }
 
   .tabs .tabs-container {
@@ -177,7 +178,6 @@
 @media (min-width: 1200px) {
   /* Details 2 */
   .tabs .tabs-container {
-    max-width: 28rem;
     margin-right: 5rem;
     margin-left: auto;
   }

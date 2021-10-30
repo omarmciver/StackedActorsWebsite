@@ -3,11 +3,12 @@ import React from 'react'
 import Spinner from './components/support/Spinner';
 import Navbar from './components/nav/Navbar';
 import HeaderSection from './components/sections/HeaderSection/HeaderSection';
-import IntroSection from './components/sections/IntroSection/IntroSection';
-import AccordionSection from './components/sections/AccordionSection/AccordionSection';
+// import IntroSection from './components/sections/IntroSection/IntroSection';
+// import AccordionSection from './components/sections/AccordionSection/AccordionSection';
 import TabsSection from './components/sections/TabsSection/TabsSection';
-import ProjectsSection from './components/sections/ProjectsSection/ProjectsSection';
-import FooterSection from './components/sections/FooterSection/FooterSection';
+import MusicSection from './components/sections/MusicSection/MusicSection';
+import PhotoSection from './components/sections/PhotoSection/PhotoSection';
+// import FooterSection from './components/sections/FooterSection/FooterSection';
 import CopyrightSection from './components/sections/CopyrightSection/CopyrightSection';
 
 function App() {
@@ -16,10 +17,11 @@ function App() {
       <Spinner />
       <Navbar />
       <HeaderSection />
-      <ProjectsSection />
+      <MusicSection />
+      <PhotoSection />
       {/* <IntroSection /> */}
       {/* <AccordionSection /> */}
-      {/* <TabsSection /> */}
+      <TabsSection />
       {/* <FooterSection /> */}
       <CopyrightSection />
     </div>

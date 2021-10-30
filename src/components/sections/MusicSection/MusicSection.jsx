@@ -1,6 +1,6 @@
-import './ProjectsSection.css'
+import './MusicSection.css'
 
-function ProjectsSection() {
+function MusicSection() {
 
     return (
         <div>
@@ -8,8 +8,8 @@ function ProjectsSection() {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
-                            <div className="section-title">PROJECTS</div>
-                            <h2>Projects That We're Proud Of</h2>
+                            <div className="section-title">MUSIC</div>
+                            <h2>Noise That We're Proud Of</h2>
                         </div>
                     </div>
                     <div className="row">
@@ -294,4 +294,4 @@ function ProjectsSection() {
     );
 
 }
-export default ProjectsSection;
+export default MusicSection;
