@@ -7,6 +7,10 @@ directory = "dist"
 binding = "ASSETS"
 # Client-side routing: unknown paths fall through to the SPA.
 not_found_handling = "single-page-application"
+# Assets are served before the Worker by default, which would mean /audio/*
+# and the robots.txt override never reach our code. Run the Worker first on
+# those paths only; everything else still gets the fast asset path.
+run_worker_first = ["/audio/*", "/robots.txt", "/vault-*"]
 
 [[r2_buckets]]
 binding = "MIXES"

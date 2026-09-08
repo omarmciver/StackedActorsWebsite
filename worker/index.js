@@ -11,18 +11,20 @@ const AUDIO_PREFIX = '/audio/'
 
 export default {
   async fetch(request, env) {
-    const url = new URL(request.pathname === '' ? '/' : request.url)
+    const url = new URL(request.url)
 
     if (url.pathname.startsWith(AUDIO_PREFIX)) {
       return serveAudio(request, env, decodeURIComponent(url.pathname.slice(AUDIO_PREFIX.length)))
     }
 
     if (url.pathname === '/robots.txt') {
-      // Disallow everything under the vault path without naming it in the repo.
-      return new Response(
-        `User-agent: *\nAllow: /\nDisallow: /${env.VAULT_PATH || 'vault'}\n`,
-        { headers: { 'content-type': 'text/plain' } }
-      )
+      // Deliberately does NOT name the vault path: robots.txt is public, so a
+      // Disallow line would publish the secret to anyone who looked. The vault
+      // is kept out of indexes by the x-robots-tag header below instead, which
+      // only the person who already has the URL ever sees.
+      return new Response('User-agent: *\nAllow: /\n', {
+        headers: { 'content-type': 'text/plain' },
+      })
     }
 
     const res = await env.ASSETS.fetch(request)

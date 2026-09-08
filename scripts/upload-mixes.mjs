@@ -28,19 +28,19 @@ const wrangler = (args, opts = {}) =>
     ...opts,
   })
 
-/* Which keys are already up there? One list call beats 78 head calls. */
-function existingKeys() {
-  if (FORCE) return new Set()
+/* Is this key already in the bucket?
+   wrangler has no object-list subcommand, so probe the key with `object get`
+   writing to /dev/null. That is one call per file, but it makes a re-run after
+   a partial upload cheap in bandwidth, which is the case that matters.
+   ponytail: a HEAD would be nicer; the CLI doesn't expose one. */
+function alreadyUploaded(key) {
+  if (FORCE) return false
   try {
-    const out = wrangler(['r2', 'object', 'list', BUCKET, '--remote'], { quiet: true })
-    return new Set(
-      out.split('\n')
-        .map((l) => l.trim())
-        .filter((l) => l.startsWith('mixes/'))
-    )
+    wrangler(['r2', 'object', 'get', `${BUCKET}/${key}`, '--file', '/dev/null', '--remote'],
+      { quiet: true })
+    return true
   } catch {
-    // Bucket may not exist yet, or the CLI shape differs; fall back to uploading all.
-    return new Set()
+    return false
   }
 }
 
@@ -60,15 +60,19 @@ if (DRY) {
   process.exit(0)
 }
 
-const already = existingKeys()
+/* Probing costs a wrangler invocation per file, and wrangler startup is the
+   slow part - so only probe with --resume, when most files are expected to be
+   present already. A plain re-run just overwrites, which is harmless. */
+const RESUME = process.argv.includes('--resume')
 let done = 0
 let skipped = 0
 let failed = 0
 
 for (const m of manifest) {
   const n = `${String(done + skipped + failed + 1).padStart(3)}/${manifest.length}`
-  if (already.has(m.src)) {
+  if (RESUME && alreadyUploaded(m.src)) {
     skipped++
+    console.log(`${n} have ${m.src}`)
     continue
   }
   try {

@@ -48,16 +48,22 @@ transposition and — importantly — that chords stay aligned above their words
 
 ```bash
 node scripts/upload-mixes.mjs --dry    # list what would go up
-node scripts/upload-mixes.mjs          # upload, skipping what's already there
+node scripts/upload-mixes.mjs          # upload all
+node scripts/upload-mixes.mjs --resume # skip files already uploaded
 ```
 
-Safe to re-run; it skips objects already in the bucket. Mixes only — never stems.
+Safe to re-run — `put` overwrites. Add `--resume` after a partial upload to skip
+files already in the bucket (slower per file, but avoids re-sending them).
+Mixes only — never stems.
 
 ## The vault
 
 `/<secret-path>` lists every song and cover with surviving multitracks, linking into
-OneDrive. It is not linked from anywhere on the site, is excluded in `robots.txt`, and
-is served `x-robots-tag: noindex`.
+OneDrive. It is not linked from anywhere on the site and is served with
+`x-robots-tag: noindex, nofollow, noarchive` so it stays out of search results.
+
+Note that `robots.txt` deliberately does **not** mention the vault path — robots.txt
+is public, so a `Disallow:` line would hand the secret to anyone who read it.
 
 **This is obscurity, not access control.** Anyone with the URL can open it, and
 sharing it hands over the same access. That's the accepted trade for a small trusted
