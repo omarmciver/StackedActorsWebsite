@@ -24,7 +24,13 @@ bucket_name = "stackedactors-mixes"
 # and must match VITE_VAULT_PATH in .env.local (also gitignored) at build time.
 # See README - "The vault".
 
-# Custom domain is attached in the Cloudflare dashboard, or uncomment:
-# [[routes]]
-# pattern = "stackedactors.com"
-# custom_domain = true
+# Both hostnames serve the site directly - no redirect hop between them.
+# The MX records for this zone point at IONOS and must be left alone; attaching
+# a Worker custom domain only replaces the A/AAAA/CNAME web records.
+[[routes]]
+pattern = "stackedactors.com"
+custom_domain = true
+
+[[routes]]
+pattern = "www.stackedactors.com"
+custom_domain = true
