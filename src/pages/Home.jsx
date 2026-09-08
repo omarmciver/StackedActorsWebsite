@@ -67,17 +67,6 @@ export default function Home() {
         </>
       )}
 
-      <h2 className="section-head">About the archive</h2>
-      <div className="prose">
-        <p>
-          This site is generated directly from the archive catalogue, so what you see
-          is what actually survived &mdash; including the gaps. Where a recording date
-          or a title is genuinely unknown, it says so rather than guessing.
-        </p>
-        <p>
-          <Link to="/archive">More about the preservation project &rarr;</Link>
-        </p>
-      </div>
     </div>
   )
 }

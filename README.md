@@ -56,6 +56,24 @@ Safe to re-run — `put` overwrites. Add `--resume` after a partial upload to sk
 files already in the bucket (slower per file, but avoids re-sending them).
 Mixes only — never stems.
 
+## Not public yet
+
+The site sits behind a holding page while the catalogue is still being organised.
+Visiting the secret vault link bypasses it and unlocks the real site for the session,
+so it stays reviewable.
+
+To go public:
+
+1. `src/App.jsx` — delete the `if (!unlocked)` block that returns `<Holding />`
+2. `worker/index.js` — robots.txt back to `Allow: /`, and drop the blanket
+   `x-robots-tag` (keep the vault-only branch)
+3. `wrangler.toml` — `run_worker_first` back to `["/audio/*", "/robots.txt", "/vault-*"]`
+4. Re-enable Cloudflare's managed robots.txt if wanted:
+   `PUT /zones/{zone}/bot_management {"is_robots_txt_managed": true}` — it was
+   turned off because it injected `Allow: /` over the Worker's `Disallow: /`
+5. Decide whether Loose / Vulcan / Songbook / Covers should become public again
+   (they are currently gated by the same secret link — see `src/access.jsx`)
+
 ## The vault
 
 `/<secret-path>` lists every song and cover with surviving multitracks, linking into

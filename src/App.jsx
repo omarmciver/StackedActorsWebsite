@@ -10,6 +10,7 @@ import Songbook from './pages/Songbook'
 import Covers from './pages/Covers'
 import Archive from './pages/Archive'
 import Vault from './pages/Vault'
+import Holding from './pages/Holding'
 import { useAccess } from './access'
 
 /* The vault path is a secret URL. It is injected at build time so it never
@@ -24,6 +25,20 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  const { unlocked } = useAccess()
+
+  /* The site is not public yet. Everyone gets the holding page except via the
+     secret link, which stays routable so it can grant the bypass. Nothing but
+     the holding page renders until then - no rail, no player, no nav. */
+  if (!unlocked) {
+    return (
+      <Routes>
+        <Route path={`/${VAULT_PATH}`} element={<Unlock />} />
+        <Route path="*" element={<Holding />} />
+      </Routes>
+    )
+  }
+
   return (
     <div className="shell">
       <Rail />
@@ -50,6 +65,15 @@ export default function App() {
       <PlayerBar />
     </div>
   )
+}
+
+/* Reached via the secret link while the site is still behind the holding
+   page. Unlocks, which re-renders App into the real site with the vault
+   showing - so one link both opens the site and lands on the stems. */
+function Unlock() {
+  const { unlock } = useAccess()
+  useEffect(unlock, []) // eslint-disable-line react-hooks/exhaustive-deps
+  return null
 }
 
 /* Gates a private section. Renders the 404 when locked so a stray visitor

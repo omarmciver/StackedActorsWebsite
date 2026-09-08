@@ -18,26 +18,28 @@ export default {
     }
 
     if (url.pathname === '/robots.txt') {
-      // Deliberately does NOT name the vault path: robots.txt is public, so a
-      // Disallow line would publish the secret to anyone who looked. The vault
-      // is kept out of indexes by the x-robots-tag header below instead, which
-      // only the person who already has the URL ever sees.
-      return new Response('User-agent: *\nAllow: /\n', {
+      // The site is behind a holding page until the catalogue work is done, so
+      // nothing should be indexed yet. Deliberately does NOT name the vault
+      // path: robots.txt is public, and a Disallow line would publish the
+      // secret to anyone who looked.
+      return new Response('User-agent: *\nDisallow: /\n', {
         headers: { 'content-type': 'text/plain' },
       })
     }
 
     const res = await env.ASSETS.fetch(request)
 
-    // The vault is a real page, but must never be indexed.
+    // Nothing is indexable while the site sits behind the holding page.
+    // Drop this blanket header (keeping the vault case) when going public.
+    const headers = new Headers(res.headers)
+    headers.set('x-robots-tag', 'noindex, nofollow, noarchive')
+
+    // The vault must not be cached by anything in front of us either.
     if (env.VAULT_PATH && url.pathname.startsWith(`/${env.VAULT_PATH}`)) {
-      const headers = new Headers(res.headers)
-      headers.set('x-robots-tag', 'noindex, nofollow, noarchive')
       headers.set('cache-control', 'private, no-store')
-      return new Response(res.body, { status: res.status, headers })
     }
 
-    return res
+    return new Response(res.body, { status: res.status, headers })
   },
 }
 
