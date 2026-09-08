@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="page">
       <p className="eyebrow">Since about 1998</p>
-      <h1>Twenty years of tape,<br />finally playable</h1>
+      <h1>Twenty years of tape</h1>
       <p className="lede">
         Everything here was recorded to a hard drive, burned to a CD, and then more or
         less forgotten about. It has spent the last while being dug back out, catalogued
