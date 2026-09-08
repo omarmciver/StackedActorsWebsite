@@ -236,9 +236,9 @@ const ALBUMS = [
   {
     slug: 'time-lost',
     title: 'Time Lost',
-    blurb: 'The closest thing to a finished record. Track 02 has never been found; track 11 was never titled.',
+    blurb: 'The closest thing to a finished record. Track 11 was never titled.',
     tracks: [
-      ['fighting-my-own-demons', 1], [null, 2], ['unintended-lies', 3], ['tonight', 4],
+      ['fighting-my-own-demons', 1], ['terri', 2], ['unintended-lies', 3], ['tonight', 4],
       ['inner-child', 5], ['spiders', 6], ['something-s-missing', 7], ['i-understand-you', 8],
       ['you-are-there', 9], ['stolen-promise', 10], ['time-lost-track-11', 11],
     ],

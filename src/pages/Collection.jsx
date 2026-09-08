@@ -71,7 +71,7 @@ function PracticeTakes() {
                 onClick={() => play({ ...mix, songTitle: song.title, slug: song.slug })}
                 aria-label={`Play ${song.title} practice take`}
               >
-                {isPlaying ? '▶' : '·'}
+                {isPlaying ? '\u25B6' : '\u25B8'}
               </button>
               <span className="ttl">
                 <Link to={`/song/${song.slug}`}>{song.title}</Link>

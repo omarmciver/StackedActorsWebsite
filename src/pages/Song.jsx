@@ -51,7 +51,7 @@ export default function Song() {
                     onClick={() => play({ ...m, songTitle: song.title, slug: song.slug })}
                     aria-label={`Play ${m.label}`}
                   >
-                    {isPlaying ? '▶' : '·'}
+                    {isPlaying ? '\u25B6' : '\u25B8'}
                   </button>
                   <span className="ttl">
                     {m.label}

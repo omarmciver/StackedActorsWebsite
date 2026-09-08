@@ -42,7 +42,9 @@ for (const m of manifest) {
 /* Album runs must keep every slot, including the known gaps. */
 const timeLost = albums.find((a) => a.slug === 'time-lost')
 assert.equal(timeLost.tracks.length, 11, 'Time Lost lost a track slot')
-assert.ok(timeLost.tracks.find((t) => t.track === 2).missing, 'Time Lost 02 should be missing')
+// Track 02 was identified as Terri on 2026-09-08; the run is now complete.
+assert.equal(timeLost.tracks.find((t) => t.track === 2).slug, 'terri', 'Time Lost 02 is Terri')
+assert.ok(timeLost.tracks.every((t) => !t.missing), 'Time Lost should have no gaps')
 assert.equal(albums.find((a) => a.slug === 'early-demo-cd').tracks.length, 10)
 for (const a of albums) {
   for (const t of a.tracks) {

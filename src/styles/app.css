@@ -430,14 +430,16 @@ h1, h2, h3, h4 {
 @media (max-width: 860px) { .bar { left: 0; } }
 
 .play {
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
   border: 1px solid var(--accent);
   color: var(--accent);
   display: grid;
   place-items: center;
   flex: none;
-  font-size: 13px;
+  font-size: 15px;
+  border-radius: 2px;
+  transition: background-color 0.12s, color 0.12s;
 }
 .play:hover { background: var(--accent); color: var(--ground); }
 
@@ -471,20 +473,55 @@ h1, h2, h3, h4 {
   flex: none;
 }
 
+/* Seek bar. The visible groove stays slim, but the clickable element is
+   padded out to a comfortable target so you don't have to hit 3px. */
 .track {
   flex: 1;
-  height: 3px;
-  background: var(--line);
+  height: 22px;
   position: relative;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  touch-action: none;
+}
+
+.track::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--line);
+  border-radius: 3px;
 }
 
 .track > i {
   position: absolute;
-  inset: 0 auto 0 0;
+  left: 0;
+  height: 6px;
   background: var(--accent);
+  border-radius: 3px;
   display: block;
 }
+
+/* Grab handle at the play head - shows where you are and that it can be dragged. */
+.track > i::after {
+  content: "";
+  position: absolute;
+  right: -7px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  transform: translateY(-50%) scale(0.82);
+  background: var(--accent);
+  border: 2px solid var(--raised);
+  border-radius: 50%;
+  transition: transform 0.12s;
+}
+
+.track:hover > i::after,
+.track:focus-visible > i::after { transform: translateY(-50%) scale(1.1); }
+.track:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
 
 /* ------------------------------------------------------------- utilities */
 
@@ -529,17 +566,30 @@ h1, h2, h3, h4 {
   padding: 28px 0;
 }
 
+/* The row play control. Sized as a real target rather than a bare glyph:
+   a track number until hovered, a play triangle once you can act on it. */
 .row .as-play {
   font-family: var(--mono);
   font-size: 11px;
   color: var(--faint);
-  padding: 4px 0;
-  text-align: left;
+  width: 30px;
+  height: 30px;
+  margin: -4px 0 -4px -6px;
+  display: grid;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  text-align: center;
   font-variant-numeric: tabular-nums;
+  transition: color 0.12s, border-color 0.12s, background-color 0.12s;
 }
-.row .as-play:hover:not(:disabled) { color: var(--accent); }
-.row .as-play:disabled { cursor: default; opacity: 0.45; }
-.row.playing .as-play { color: var(--accent); }
+.row .as-play:hover:not(:disabled),
+.row .as-play:focus-visible:not(:disabled) {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.row .as-play:disabled { cursor: default; opacity: 0.4; }
+.row.playing .as-play { color: var(--accent); border-color: var(--accent); }
 .row .ttl a { color: var(--ink); }
 .row .ttl a:hover { color: var(--accent); }
 
@@ -580,3 +630,19 @@ h1, h2, h3, h4 {
 .vault-controls input:focus { outline: none; border-color: var(--accent); }
 
 a.badge.stem:hover { background: var(--ok); color: var(--ground); text-decoration: none; }
+
+/* Track number swaps to a play triangle on hover/focus, so the control
+   announces itself without adding a permanent icon to every row. */
+.row .as-play .glyph-hover { display: none; }
+.row .as-play:hover .glyph-rest,
+.row .as-play:focus-visible .glyph-rest { display: none; }
+.row .as-play:hover .glyph-hover,
+.row .as-play:focus-visible .glyph-hover { display: inline; }
+.row .as-play:disabled:hover .glyph-rest { display: inline; }
+.row .as-play:disabled:hover .glyph-hover { display: none; }
+
+/* Keep the handle enlarged while scrubbing, and widen the bar's own
+   breathing room so the control isn't crammed against the edges. */
+.track.dragging > i::after { transform: translateY(-50%) scale(1.15); }
+.track.dragging { cursor: grabbing; }
+.bar-scrub { padding-right: 6px; }

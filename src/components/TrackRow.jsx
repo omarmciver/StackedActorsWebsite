@@ -27,7 +27,7 @@ export default function TrackRow({ track, song, mix }) {
         disabled={!primary}
         aria-label={primary ? `Play ${song.title}` : `${song.title} has no audio`}
       >
-        {isPlaying ? '▶' : track != null ? String(track).padStart(2, '0') : '·'}
+        <PlayGlyph playing={isPlaying} track={track} />
       </button>
 
       <span className="ttl">
@@ -44,5 +44,20 @@ export default function TrackRow({ track, song, mix }) {
         {song.stemCount > 0 && <span className="badge stem">{song.stemCount} stems</span>}
       </span>
     </div>
+  )
+}
+
+/* Shows the track number at rest and a play triangle on hover, so the control
+   reads as a button rather than as decoration. Falls back to a triangle when
+   the row has no track number of its own. */
+function PlayGlyph({ playing, track }) {
+  if (playing) return <span aria-hidden="true">&#9654;</span>
+  return (
+    <>
+      <span className="glyph-rest" aria-hidden="true">
+        {track != null ? String(track).padStart(2, '0') : '\u25B8'}
+      </span>
+      <span className="glyph-hover" aria-hidden="true">&#9654;</span>
+    </>
   )
 }
