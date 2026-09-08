@@ -21,3 +21,11 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Secret vault path and local build config
+.env.local
+
+# Generated from the archive at build time
+/src/data/catalog.json
+/src/data/upload-manifest.json
+/dist

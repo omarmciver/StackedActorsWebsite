@@ -1,0 +1,4 @@
+{
+  "oneDriveRoot": "",
+  "_comment": "Paste the OneDrive share link for the folder that CONTAINS songs/ and covers/. Leave empty to show 'on request' instead of links. The vault path itself is set in worker/index.js (VAULT_PATH)."
+}

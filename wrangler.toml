@@ -1,0 +1,26 @@
+name = "stackedactors"
+main = "worker/index.js"
+compatibility_date = "2025-01-01"
+
+[assets]
+directory = "dist"
+binding = "ASSETS"
+# Client-side routing: unknown paths fall through to the SPA.
+not_found_handling = "single-page-application"
+
+[[r2_buckets]]
+binding = "MIXES"
+bucket_name = "stackedactors-mixes"
+
+# VAULT_PATH is deliberately NOT set here - this file is in git, and the vault
+# path is the only thing gating the vault. It is set as a Worker secret:
+#
+#   npx wrangler secret put VAULT_PATH
+#
+# and must match VITE_VAULT_PATH in .env.local (also gitignored) at build time.
+# See README - "The vault".
+
+# Custom domain is attached in the Cloudflare dashboard, or uncomment:
+# [[routes]]
+# pattern = "stackedactors.com"
+# custom_domain = true

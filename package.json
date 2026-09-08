@@ -1,45 +1,25 @@
 {
-  "name": "website",
-  "homepage": "http://omarmciver.github.io",
-  "version": "0.1.0",
+  "name": "stackedactors",
+  "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-player": "^2.9.0",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
-  },
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "catalog": "node scripts/build-catalog.mjs",
+    "catalog:test": "node scripts/build-catalog.mjs && node scripts/build-catalog.test.mjs",
+    "dev": "vite",
+    "build": "node scripts/build-catalog.mjs && vite build",
+    "preview": "vite preview",
+    "upload": "node scripts/upload-mixes.mjs",
+    "deploy": "yarn build && wrangler deploy"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1"
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.7",
+    "wrangler": "^4.40.0"
   }
 }
