@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import catalog from '../data/catalog.json'
 import { usePlayer } from '../player'
 import { renderSheet } from '../chords'
+import { useAccess } from '../access'
 
 const KIND_LABEL = {
   album: 'Album mix',
@@ -15,18 +16,22 @@ export default function Song() {
   const { slug } = useParams()
   const song = catalog.songs.find((s) => s.slug === slug)
   const { current, play } = usePlayer()
+  const { unlocked } = useAccess()
   const [semitones, setSemitones] = useState(0)
 
   if (!song) return <div className="page"><h1>Not found</h1></div>
 
   const album = catalog.albums.find((a) => a.slug === song.album)
-  const lines = song.lyrics ? renderSheet(song.lyrics.text, semitones) : null
+  const lines = unlocked && song.lyrics ? renderSheet(song.lyrics.text, semitones) : null
+
+  // Non-album songs belong to a private collection, so only send the reader
+  // there if they've come in through the secret link; otherwise back to home.
+  const backTo = album ? `/album/${album.slug}` : unlocked ? '/loose' : '/'
+  const backLabel = album ? album.title : unlocked ? 'Loose & unreleased' : 'Stacked Actors'
 
   return (
     <div className="page">
-      <Link to={album ? `/album/${album.slug}` : '/loose'} className="back">
-        &larr; {album ? album.title : 'Loose & unreleased'}
-      </Link>
+      <Link to={backTo} className="back">&larr; {backLabel}</Link>
 
       <p className="eyebrow">{song.songId || 'Song'}</p>
       <h1>{song.title}</h1>
@@ -100,7 +105,7 @@ export default function Song() {
             <p>
               <strong>{song.stemCount} stems</strong> survive for this song
               ({(song.stemBytes / 1024 / 1024 / 1024).toFixed(1)} GB).
-              They&rsquo;re available to anyone who played on them &mdash; ask Omar for the link.
+              They&rsquo;re available to anyone who played on them &mdash; ask for the link.
             </p>
           </div>
         </>

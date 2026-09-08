@@ -10,6 +10,7 @@ import Songbook from './pages/Songbook'
 import Covers from './pages/Covers'
 import Archive from './pages/Archive'
 import Vault from './pages/Vault'
+import { useAccess } from './access'
 
 /* The vault path is a secret URL. It is injected at build time so it never
    appears in the repo; without it the route falls back to something
@@ -32,18 +33,30 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/album/:slug" element={<Album />} />
           <Route path="/song/:slug" element={<Song />} />
-          <Route path="/loose" element={<Collection section="loose" />} />
-          <Route path="/practice" element={<Collection section="practice" />} />
-          <Route path="/songbook" element={<Songbook />} />
-          <Route path="/covers" element={<Covers />} />
           <Route path="/archive" element={<Archive />} />
           <Route path={`/${VAULT_PATH}`} element={<Vault />} />
+
+          {/* Private sections: reachable only once the secret link has been
+              visited this session. Locked, they render as 404 rather than an
+              access-denied page, which would advertise that they exist. */}
+          <Route path="/loose" element={<Private><Collection section="loose" /></Private>} />
+          <Route path="/practice" element={<Private><Collection section="practice" /></Private>} />
+          <Route path="/songbook" element={<Private><Songbook /></Private>} />
+          <Route path="/covers" element={<Private><Covers /></Private>} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <PlayerBar />
     </div>
   )
+}
+
+/* Gates a private section. Renders the 404 when locked so a stray visitor
+   learns nothing about what is behind the link. */
+function Private({ children }) {
+  const { unlocked } = useAccess()
+  return unlocked ? children : <NotFound />
 }
 
 function NotFound() {

@@ -38,7 +38,7 @@ export default function Covers() {
         <p>
           <strong>No audio here by design.</strong> These are recordings of songs written
           by other people, so streaming them publicly isn&rsquo;t ours to do. If you played
-          on them, the recordings and stems are available &mdash; ask Omar.
+          on them, the recordings and stems are available &mdash; ask for the link.
         </p>
       </div>
     </div>

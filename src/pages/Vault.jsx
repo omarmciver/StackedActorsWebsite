@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import catalog from '../data/catalog.json'
 import vault from '../data/vault.json'
+import { useUnlockOnMount } from '../access'
 
 /* The stems live on OneDrive. One shared root folder is configured here; each
    song deep-links into its own subfolder, so new songs need no new share.
@@ -15,6 +16,8 @@ const folderUrl = (kind, slug) =>
 const gb = (bytes) => (bytes / 1024 / 1024 / 1024).toFixed(2)
 
 export default function Vault() {
+  // Arriving here is what unlocks the private sections for this session.
+  useUnlockOnMount()
   const [tab, setTab] = useState('songs')
   const [q, setQ] = useState('')
 
@@ -51,7 +54,7 @@ export default function Vault() {
           <p>
             <strong>Download links aren&rsquo;t live yet.</strong> The file list below is
             complete and accurate, but the OneDrive share hasn&rsquo;t been set up.
-            Ask Omar and he&rsquo;ll send files directly.
+            Ask and the files can be sent directly.
           </p>
         </div>
       )}

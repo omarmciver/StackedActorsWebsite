@@ -1,7 +1,10 @@
 import { NavLink, Link } from 'react-router-dom'
 import catalog from '../data/catalog.json'
+import { useAccess } from '../access'
 
 export default function Rail() {
+  const { unlocked } = useAccess()
+
   return (
     <nav className="rail">
       <Link to="/" className="brand">
@@ -15,11 +18,15 @@ export default function Rail() {
           <NavLink key={a.slug} to={`/album/${a.slug}`}>{a.title}</NavLink>
         ))}
 
-        <div className="nav-label">More</div>
-        <NavLink to="/loose">Loose &amp; unreleased</NavLink>
-        <NavLink to="/practice">Vulcan Studios</NavLink>
-        <NavLink to="/songbook">Songbook</NavLink>
-        <NavLink to="/covers">Covers</NavLink>
+        {unlocked && (
+          <>
+            <div className="nav-label">More</div>
+            <NavLink to="/loose">Loose &amp; unreleased</NavLink>
+            <NavLink to="/practice">Vulcan Studios</NavLink>
+            <NavLink to="/songbook">Songbook</NavLink>
+            <NavLink to="/covers">Covers</NavLink>
+          </>
+        )}
 
         <div className="nav-label">About</div>
         <NavLink to="/archive">The archive</NavLink>
@@ -27,7 +34,7 @@ export default function Rail() {
 
       <div className="rail-foot">
         {catalog.stats.mixes} mixes<br />
-        {catalog.stats.chordSheets} chord sheets<br />
+        {unlocked && <>{catalog.stats.chordSheets} chord sheets<br /></>}
         {catalog.stats.stems.toLocaleString()} stems preserved
       </div>
     </nav>

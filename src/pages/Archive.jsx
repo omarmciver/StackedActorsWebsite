@@ -33,17 +33,6 @@ export default function Archive() {
           evidence rather than noise &mdash; even when they contradicted each other, which
           was often.
         </p>
-        <p>
-          The guiding rule was <strong>never guess silently</strong>. Where something was
-          inferred rather than known, it&rsquo;s recorded as inferred. Where a date or a
-          title is genuinely unknown, nothing was invented to fill the gap. That&rsquo;s
-          why parts of this site say &ldquo;unknown&rdquo; instead of a plausible year.
-        </p>
-        <p>
-          This website is generated straight from the archive catalogue. Nothing here is
-          typed in by hand, so the site can&rsquo;t drift away from what actually exists
-          on disk.
-        </p>
       </div>
 
       <h2 className="section-head">What&rsquo;s still missing</h2>
@@ -64,7 +53,7 @@ export default function Archive() {
       <div className="callout">
         <p>
           <strong>Played on any of this?</strong> The multitracks are all preserved and
-          available &mdash; ask Omar for the link to the vault.
+          available &mdash; ask for the link to the vault.
         </p>
       </div>
 
